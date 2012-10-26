@@ -8,15 +8,22 @@ Coup::Coup() {
 Coup::Coup(const Coup &orig) {
 }
 
-Coup::Coup(const string &nom, const string& dominant) : nom(nom), dominant(dominant) {
-}
+Coup::Coup(const string &nom, const string &dominant)
+        : nom(nom), dominant(dominant) {}
 
 Coup::~Coup() {
 }
 
 void Coup::afficher(ostream &flux) const {
-    
     cout << "type : " << getNom();
+}
+
+void Coup::setJoueur(const void *joueur) {
+    this->joueur = joueur;
+}
+
+const void* Coup::getJoueur() const {
+    return this->joueur;
 }
 
 ostream &operator<<(ostream &flux, const Coup &coup) {

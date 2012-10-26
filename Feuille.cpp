@@ -6,6 +6,10 @@ using namespace std;
 Feuille::Feuille() : Coup(FEUILLE, CISEAU) {
 }
 
+Feuille::Feuille(const void *joueur) : Coup(FEUILLE, CISEAU) {
+    this->setJoueur(joueur);
+}
+
 Feuille::Feuille(const Feuille &orig) {
 }
 

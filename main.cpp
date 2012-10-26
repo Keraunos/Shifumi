@@ -38,13 +38,13 @@ void tests() {
     Ciseau c1, c2;
     
     // test operateur <<
-    cout << "Affichage des types :" << endl;
+    cout << "Test operateur <<" << endl;
     cout << "  Classe Feuille => \"" << f1 << "\"" << endl;
     cout << "  Classe Pierre  => \"" << p1 << "\"" << endl;
     cout << "  Classe Ciseau  => \"" << c1 << "\"" << endl;
     
     // test operateur ==
-    cout << endl << "Test operateur == :" << endl;
+    cout << endl << "Test operateur ==" << endl;
     cout << "  Valeur attendue : 1" << endl;
     cout << "    " << (f1 == f2) << endl;
     cout << "    " << (p1 == p2) << endl;
@@ -55,7 +55,7 @@ void tests() {
     cout << "    " << (p1 == c2) << endl;
     
     // test operateur <
-    cout << endl << "Test operateur < :" << endl;
+    cout << endl << "Test operateur <" << endl;
     cout << "  Valeur attendue : 1" << endl;
     cout << "    " << (p1 < f1) << endl;
     cout << "    " << (f1 < c1) << endl;
@@ -69,7 +69,7 @@ void tests() {
     Joueur j;
     Coup *c;
     int nbFeuilles(0), nbPierres(0), nbCiseaux(0), nbTours(100);
-    cout << endl << "Test de Joueur.obtenirCoup() :" << endl;
+    cout << endl << "Test Joueur.obtenirCoup()" << endl;
     for (int i(0); i<nbTours; i++) {
         c = j.obtenirCoup();
         if (c->getNom() == FEUILLE) {
@@ -84,6 +84,15 @@ void tests() {
     cout << nbFeuilles << " feuilles, ";
     cout << nbPierres << " pierres, ";
     cout << nbCiseaux << " ciseaux." << endl;
+    
+    // tests pointeur sur Joueur dans Coup
+    cout << endl << "Test Coup.joueur" << endl;
+    Joueur j5;
+    Coup *c5 = j5.obtenirCoup();
+    cout << "  Les deux adresses memoire doivent etre egales :" << endl;
+    cout << "    Joueur = " << &j5 << endl;
+    cout << "    Joueur = " << c5->getJoueur() << endl;
+    
 }
 
 

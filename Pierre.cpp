@@ -6,6 +6,10 @@ using namespace std;
 Pierre::Pierre() : Coup(PIERRE, FEUILLE) {
 }
 
+Pierre::Pierre(const void *joueur) : Coup(PIERRE, FEUILLE) {
+    this->setJoueur(joueur);
+}
+
 Pierre::Pierre(const Pierre &orig) {
 }
 

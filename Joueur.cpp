@@ -18,13 +18,13 @@ Coup* Joueur::obtenirCoup() {
     
     switch(alea) {
         case 0:
-            return new Feuille();
+            return new Feuille(this);
         break;
         case 1:
-            return new Pierre();
+            return new Pierre(this);
         break;
         case 2:
-            return new Ciseau();
+            return new Ciseau(this);
         break;
         default:
             return NULL;

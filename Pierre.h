@@ -6,6 +6,7 @@
 class Pierre : public Coup {
 public:
     Pierre();
+    Pierre(const void *joueur);
     Pierre(const Pierre &orig);
     virtual ~Pierre();
     virtual std::string getNom() const;
