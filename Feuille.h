@@ -6,9 +6,9 @@
 class Feuille : public Coup {
 public:
     Feuille();
-    Feuille(const Feuille& orig);
+    Feuille(const Feuille &orig);
     virtual ~Feuille();
-    virtual std::string getNom();
+    virtual std::string getNom() const;
 private:
 
 };

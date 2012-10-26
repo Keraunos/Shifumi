@@ -6,9 +6,9 @@
 class Pierre : public Coup {
 public:
     Pierre();
-    Pierre(const Pierre& orig);
+    Pierre(const Pierre &orig);
     virtual ~Pierre();
-    virtual std::string getNom();
+    virtual std::string getNom() const;
 private:
 
 };

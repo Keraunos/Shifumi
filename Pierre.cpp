@@ -2,15 +2,15 @@
 
 using namespace std;
 
-Pierre::Pierre() {
+Pierre::Pierre() : Coup("Pierre") {
 }
 
-Pierre::Pierre(const Pierre& orig) {
+Pierre::Pierre(const Pierre &orig) {
 }
 
 Pierre::~Pierre() {
 }
 
-string Pierre::getNom() {
+string Pierre::getNom() const{
     return nom;
 }

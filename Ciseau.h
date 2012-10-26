@@ -6,9 +6,9 @@
 class Ciseau : public Coup {
 public:
     Ciseau();
-    Ciseau(const Ciseau& orig);
+    Ciseau(const Ciseau &orig);
     virtual ~Ciseau();
-    virtual std::string getNom();
+    virtual std::string getNom() const;
 private:
 
 };
