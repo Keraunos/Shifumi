@@ -9,6 +9,7 @@ public:
     Feuille(const Feuille &orig);
     virtual ~Feuille();
     virtual std::string getNom() const;
+    virtual std::string getDominant() const;
 private:
 
 };

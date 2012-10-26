@@ -9,6 +9,7 @@ public:
     Pierre(const Pierre &orig);
     virtual ~Pierre();
     virtual std::string getNom() const;
+    virtual std::string getDominant() const;
 private:
 
 };

@@ -9,6 +9,7 @@ public:
     Ciseau(const Ciseau &orig);
     virtual ~Ciseau();
     virtual std::string getNom() const;
+    virtual std::string getDominant() const;
 private:
 
 };
