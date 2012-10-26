@@ -3,53 +3,87 @@
 #include <string>
 #include <iostream>
 
-//#include "Config.h"
 #include "Coup.h"
 #include "Feuille.h"
 #include "Pierre.h"
 #include "Ciseau.h"
+#include "Joueur.h"
 
 
 using namespace std;
+
+void tests();
 
 /*
  * Main function
  */
 int main(int argc, char** argv) {
     
+    // init random numbers
+    srand(time(0));
+    
+    tests();
+    
+    return 0;
+}
+
+
+/**
+ * Proceder aux tests
+ */
+void tests() {
+    
     Feuille f1, f2;
     Pierre p1, p2;
     Ciseau c1, c2;
     
     // test operateur <<
-    cout << "Affichage des types (Feuille, Pierre, Ciseau) :" << endl;
-    cout << f1 << endl;
-    cout << p1 << endl;
-    cout << c1 << endl;
+    cout << "Affichage des types :" << endl;
+    cout << "  Classe Feuille => \"" << f1 << "\"" << endl;
+    cout << "  Classe Pierre  => \"" << p1 << "\"" << endl;
+    cout << "  Classe Ciseau  => \"" << c1 << "\"" << endl;
     
     // test operateur ==
     cout << endl << "Test operateur == :" << endl;
-    cout << "Valeur attendue : 1" << endl;
-    cout << (f1 == f2) << endl;
-    cout << (p1 == p2) << endl;
-    cout << (c1 == c2) << endl;
-    cout << "valeur attendue : 0" << endl;
-    cout << (f1 == p2) << endl;
-    cout << (f1 == c2) << endl;
-    cout << (p1 == c2) << endl;
+    cout << "  Valeur attendue : 1" << endl;
+    cout << "    " << (f1 == f2) << endl;
+    cout << "    " << (p1 == p2) << endl;
+    cout << "    " << (c1 == c2) << endl;
+    cout << "  Valeur attendue : 0" << endl;
+    cout << "    " << (f1 == p2) << endl;
+    cout << "    " << (f1 == c2) << endl;
+    cout << "    " << (p1 == c2) << endl;
     
     // test operateur <
     cout << endl << "Test operateur < :" << endl;
-    cout << endl << "valeur attendue : 1" << endl;
-    cout << (p1 < f1) << endl;
-    cout << (f1 < c1) << endl;
-    cout << (c1 < p1) << endl;
-    cout << endl << "valeur attendue : 0" << endl;
-    cout << (f1 < p1) << endl;
-    cout << (c1 < f1) << endl;
-    cout << (p1 < c1) << endl;
+    cout << "  Valeur attendue : 1" << endl;
+    cout << "    " << (p1 < f1) << endl;
+    cout << "    " << (f1 < c1) << endl;
+    cout << "    " << (c1 < p1) << endl;
+    cout << "  Valeur attendue : 0" << endl;
+    cout << "    " << (f1 < p1) << endl;
+    cout << "    " << (c1 < f1) << endl;
+    cout << "    " << (p1 < c1) << endl;
     
-    
-    return 0;
+    // tests Joueur
+    Joueur j;
+    Coup *c;
+    int nbFeuilles(0), nbPierres(0), nbCiseaux(0), nbTours(100);
+    cout << endl << "Test de Joueur.obtenirCoup() :" << endl;
+    for (int i(0); i<nbTours; i++) {
+        c = j.obtenirCoup();
+        if (c->getNom() == FEUILLE) {
+            nbFeuilles++;
+        } else if (c->getNom() == PIERRE) {
+            nbPierres++;
+        } else if (c->getNom() == CISEAU) {
+            nbCiseaux++;
+        }
+    }
+    cout << "Sur " << nbTours << " coups : ";
+    cout << nbFeuilles << " feuilles, ";
+    cout << nbPierres << " pierres, ";
+    cout << nbCiseaux << " ciseaux." << endl;
 }
+
 
