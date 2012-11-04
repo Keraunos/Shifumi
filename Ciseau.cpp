@@ -6,7 +6,7 @@ using namespace std;
 Ciseau::Ciseau() : Coup(CISEAU, PIERRE) {
 }
 
-Ciseau::Ciseau(const void *joueur) : Coup(CISEAU, PIERRE) {
+Ciseau::Ciseau(const Joueur *joueur) : Coup(CISEAU, PIERRE) {
     this->setJoueur(joueur);
 }
 

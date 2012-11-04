@@ -18,11 +18,11 @@ void Coup::afficher(ostream &flux) const {
     cout << "type : " << getNom();
 }
 
-void Coup::setJoueur(const void *joueur) {
+void Coup::setJoueur(const Joueur *joueur) {
     this->joueur = joueur;
 }
 
-const void* Coup::getJoueur() const {
+const Joueur* Coup::getJoueur() const {
     return this->joueur;
 }
 

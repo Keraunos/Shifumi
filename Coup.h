@@ -7,6 +7,9 @@
 #include "Config.h"
 //#include "Joueur.h"
 
+class Joueur;
+
+
 class Coup {
 public:
     Coup();
@@ -16,12 +19,12 @@ public:
     virtual std::string getNom() const = 0;
     virtual std::string getDominant() const = 0;
     void afficher(std::ostream &flux) const;
-    void setJoueur(const void *joueur);
-    const void* getJoueur() const;
+    void setJoueur(const Joueur *joueur);
+    const Joueur* getJoueur() const;
 protected:
     std::string nom;
     std::string dominant;
-    const void *joueur; // TODO: trouver une meilleure solution pour pointeur sur Joueur
+    const Joueur *joueur;
 };
 
 

@@ -6,7 +6,7 @@
 class Ciseau : public Coup {
 public:
     Ciseau();
-    Ciseau(const void *joueur);
+    Ciseau(const Joueur *joueur);
     Ciseau(const Ciseau &orig);
     virtual ~Ciseau();
     virtual std::string getNom() const;

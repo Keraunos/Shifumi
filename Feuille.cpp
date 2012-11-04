@@ -6,7 +6,7 @@ using namespace std;
 Feuille::Feuille() : Coup(FEUILLE, CISEAU) {
 }
 
-Feuille::Feuille(const void *joueur) : Coup(FEUILLE, CISEAU) {
+Feuille::Feuille(const Joueur *joueur) : Coup(FEUILLE, CISEAU) {
     this->setJoueur(joueur);
 }
 
