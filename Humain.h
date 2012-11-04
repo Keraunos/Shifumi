@@ -3,7 +3,7 @@
 
 #include "Joueur.h"
 
-class Humain {
+class Humain : public Joueur {
 public:
     Humain();
     Humain(const Humain &orig);
