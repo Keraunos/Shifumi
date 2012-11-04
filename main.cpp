@@ -8,6 +8,8 @@
 #include "Pierre.h"
 #include "Ciseau.h"
 #include "Joueur.h"
+#include "Humain.h"
+#include "IA.h"
 
 
 using namespace std;
@@ -19,9 +21,6 @@ void tests();
  */
 int main(int argc, char** argv) {
     
-    // init random numbers
-    srand(time(0));
-    
     tests();
     
     return 0;
@@ -32,6 +31,9 @@ int main(int argc, char** argv) {
  * Proceder aux tests
  */
 void tests() {
+    
+    // init random numbers
+    srand(time(0));
     
     Feuille f1, f2;
     Pierre p1, p2;
@@ -87,7 +89,7 @@ void tests() {
     
     // tests pointeur sur Joueur dans Coup
     cout << endl << "Test Coup.joueur" << endl;
-    Joueur j5;
+    IA j5; // IA, Humain ou Joueur
     Coup *c5 = j5.obtenirCoup();
     cout << "  Les deux adresses memoire doivent etre egales :" << endl;
     cout << "    Joueur = " << &j5 << endl;
