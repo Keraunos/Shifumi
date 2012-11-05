@@ -12,10 +12,15 @@
 class Joueur {
 public:
     Joueur();
+    Joueur(const std::string &_nom);
     Joueur(const Joueur &orig);
     virtual ~Joueur();
     Coup* obtenirCoup();
+    std::string getNom() const;
+    void setNom(const std::string &nom);
+    static int nomId;
 private:
+    std::string nom;
     
 };
 

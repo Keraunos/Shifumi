@@ -6,13 +6,21 @@
 
 #include "Joueur.h"
 
+
 class Partie {
 public:
     Partie();
     Partie(const Partie& orig);
+    Partie(const int& nbJoueurs);
     virtual ~Partie();
+    void toString() const;
+    void jouerTour() const;
+    void afficherScore() const;
+    void ajouterJoueur();
+    void ajouterJoueur(Joueur *joueur);
+    void ajouterJoueurs(const int &nbJoueurs);
 private:
-    //vector<Joueur> joueurs;
+    std::vector<Joueur*> joueurs;
     
 };
 

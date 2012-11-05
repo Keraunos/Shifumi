@@ -10,6 +10,7 @@
 #include "Joueur.h"
 #include "Humain.h"
 #include "IA.h"
+#include "Partie.h"
 
 
 using namespace std;
@@ -95,6 +96,11 @@ void tests() {
     cout << "    Joueur = " << &j5 << endl;
     cout << "    Joueur = " << c5->getJoueur() << endl;
     
+    // test creation d'une partie
+    int nbJoueurs = 3;
+    cout << endl << "Test new Partie() avec " << nbJoueurs << " joueurs :" << endl;
+    Partie *part1 = new Partie(nbJoueurs);
+    part1->toString();
 }
 
 
