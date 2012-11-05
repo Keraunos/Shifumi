@@ -25,8 +25,11 @@ int main(int argc, char** argv) {
     // init random numbers
     srand(time(0));
     
-    tests();
+    //tests();
     
+    // test joueur avec une IA et un Humain
+    Partie *p = Partie::getPartieAvecIA();
+    p->jouerTours(20);
     
     return 0;
 }

@@ -2,6 +2,20 @@
 
 using namespace std;
 
+Partie::Partie() {
+}
+
+Partie* Partie::getPartieAvecIA() {
+    Partie *p = new Partie();
+    
+    IA *ia = new IA(p);
+    Humain *h = new Humain();
+    p->ajouterJoueur(ia);
+    p->ajouterJoueur(h);
+    
+    return p;
+}
+
 Partie::Partie(const playerType &typeJoueurs) : numeroTour(0) {
     ajouterJoueurs(2, typeJoueurs);
 }
@@ -24,7 +38,7 @@ Partie::~Partie() {
 void Partie::toString() const {
     cout << "Liste des joueurs :" << endl ;
     for(int i(0); i < joueurs.size(); i++) {
-        cout << "  " << joueurs[i]->getNom() << endl;
+        cout << "  " << joueurs[i]->getNom() << " [classe = " << typeid(*joueurs[i]).name() << "]" << endl;
     }
 }
 
@@ -64,6 +78,8 @@ void Partie::jouerTour() {
     Coup *coup0 = joueur0->obtenirCoup();
     Coup *coup1 = joueur1->obtenirCoup();
     
+    
+    
     cout << " " << joueur0->getNom() << " -> " << *coup0 << endl;
     cout << " " << joueur1->getNom() << " -> " << *coup1 << endl;
     
@@ -85,11 +101,14 @@ void Partie::jouerTour() {
 }
 
 void Partie::jouerTours(const int &nbTours) {
+    
     for (int i(0); i < nbTours; i++) jouerTour();
+    
     // afficher le total de Feuilles, Pierres et Ciseaux
     cout << "Total Feuilles : " << Feuille::getNbFeuilles() << endl;
     cout << "Total Pierres : " << Pierre::getNbPierres() << endl;
     cout << "Total Ciseaux : " << Ciseau::getNbCiseaux() << endl;
+    
 }
 
 void Partie::afficherScore() const {
@@ -98,5 +117,13 @@ void Partie::afficherScore() const {
     for(int i(0); i < joueurs.size(); i++) {
         cout << "  " << joueurs[i]->getNom() << " -> " << joueurs[i]->getScore() << endl;
     }
+    
+}
+
+Humain* Partie::getJoueurHumain() const {
+    
+    for (int i(0); i < joueurs.size(); i++)
+        if (typeid(*joueurs[i]) == typeid(Humain))
+            return static_cast<Humain*>(joueurs[i]);
     
 }

@@ -12,7 +12,7 @@ Humain::Humain(const Humain &orig) {
 Humain::~Humain() {
 }
 
-Coup* Humain::obtenirCoup() const {
+Coup* Humain::obtenirCoup() {
     
     const string userPrompt = string(this->getNom().append(" >> "));
     cout << userPrompt << PROMPT_COUP << endl ;
@@ -37,14 +37,17 @@ Coup* Humain::obtenirCoup() const {
         switch (choice) {
             case 1:
                 cout << FEUILLE << endl;
+                histo.push_back(TYPE_FEUILLE);
                 return new Feuille(this);
                 break;
             case 2:
                 cout << PIERRE << endl;
+                histo.push_back(TYPE_PIERRE);
                 return new Pierre(this);
                 break;
             case 3:
                 cout << CISEAU << endl;
+                histo.push_back(TYPE_CISEAU);
                 return new Ciseau(this);
                 break;
             default: throw unexpectedUserChoiceException();
@@ -61,4 +64,8 @@ Coup* Humain::obtenirCoup() const {
     }
     
     
+}
+
+std::vector<int> Humain::getHisto() const {
+    return histo;
 }

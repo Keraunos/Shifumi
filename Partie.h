@@ -15,6 +15,7 @@ public:
     Partie(const playerType &typeJoueurs);
     Partie(const Partie& orig);
     Partie(const int& nbJoueurs, const playerType &typeJoueurs);
+    static Partie* getPartieAvecIA();
     virtual ~Partie();
     void toString() const;
     void jouerTour();
@@ -23,7 +24,9 @@ public:
     void ajouterJoueur(const playerType &typeJoueurs);
     void ajouterJoueur(Joueur *joueur);
     void ajouterJoueurs(const int &nbJoueurs, const playerType &typeJoueurs);
+    Humain* getJoueurHumain() const;
 private:
+    Partie();
     std::vector<Joueur*> joueurs;
     int numeroTour;
 };
