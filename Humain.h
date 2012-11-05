@@ -10,7 +10,7 @@ public:
     Humain();
     Humain(const Humain &orig);
     virtual ~Humain();
-    Coup* obtenirCoup() const;
+    virtual Coup* obtenirCoup() const;
 private:
 
 };

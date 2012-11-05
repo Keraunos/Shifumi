@@ -2,14 +2,14 @@
 
 using namespace std;
 
-Partie::Partie() : numeroTour(0) {
-    ajouterJoueurs(2);
+Partie::Partie(const playerType &typeJoueurs) : numeroTour(0) {
+    ajouterJoueurs(2, typeJoueurs);
 }
 
 Partie::Partie(const Partie &orig) {
 }
 
-Partie::Partie(const int& nbJoueurs) : numeroTour(0) {
+Partie::Partie(const int& nbJoueurs, const playerType &typeJoueurs) : numeroTour(0) {
     Joueur *nouveauJoueur;
     for (int i(0); i < nbJoueurs; i++) {
         nouveauJoueur = new Joueur();
@@ -27,16 +27,29 @@ void Partie::toString() const {
     }
 }
 
-void Partie::ajouterJoueur() {
-    joueurs.push_back(new Joueur());
+void Partie::ajouterJoueur(const playerType &typeJoueurs) {
+    switch (typeJoueurs) {
+        case TYPE_JOUEUR:
+            joueurs.push_back(new Joueur());
+            break;
+        case TYPE_HUMAIN:
+            joueurs.push_back(new Humain());
+            break;
+        case TYPE_IA:
+            joueurs.push_back(new IA());
+            break;
+        default:
+            throw new unknownPlayerTypeException();
+    }
+    
 }
 
 void Partie::ajouterJoueur(Joueur *joueur) {
     joueurs.push_back(joueur);
 }
 
-void Partie::ajouterJoueurs(const int &nbJoueurs) {
-    for (int i(0); i < nbJoueurs; i++) ajouterJoueur();
+void Partie::ajouterJoueurs(const int &nbJoueurs, const playerType &typeJoueurs) {
+    for (int i(0); i < nbJoueurs; i++) ajouterJoueur(typeJoueurs);
 }
 
 // tour de jeu pour 2 joueurs uniquement
@@ -65,6 +78,10 @@ void Partie::jouerTour() {
     
     afficherScore();
     
+}
+
+void Partie::jouerTours(const int &nbTours) {
+    for (int i(0); i < nbTours; i++) jouerTour();
 }
 
 void Partie::afficherScore() const {

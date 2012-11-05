@@ -9,7 +9,7 @@ Joueur::Joueur() : score(0) {
     nomId++;
     
     // convertir nomId en std::string
-    std::ostringstream oss;
+    ostringstream oss;
     oss << nomId;
     
     nom = "Joueur_";

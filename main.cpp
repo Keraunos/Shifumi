@@ -25,12 +25,8 @@ int main(int argc, char** argv) {
     // init random numbers
     srand(time(0));
     
-    //tests();
+    tests();
     
-    Humain *h1 = new Humain(), *h2 = new Humain();
-    
-    h1->obtenirCoup();
-    h2->obtenirCoup();
     
     return 0;
 }
@@ -104,7 +100,7 @@ void tests() {
     // test creation d'une partie
     int nbJoueurs = 2;
     cout << endl << "Test new Partie() avec " << nbJoueurs << " joueurs" << endl;
-    Partie *part1 = new Partie(nbJoueurs);
+    Partie *part1 = new Partie(nbJoueurs, TYPE_JOUEUR);
     part1->toString();
     
     // test tour de jeu
@@ -113,6 +109,13 @@ void tests() {
     part1->jouerTour();
     part1->jouerTour();
     part1->jouerTour();
+    
+    // test partie avec humains
+    cout << endl << "Test partie avec deux humains" << endl;
+    Partie *part2 = new Partie(TYPE_HUMAIN);
+    part2->jouerTours(3);
+    
+    
 }
 
 
