@@ -19,6 +19,7 @@ public:
     std::string getNom() const;
     void setNom(const std::string &nom);
     void ajouterPoint();
+    int getScore() const;
     static int nomId;
 private:
     std::string nom;

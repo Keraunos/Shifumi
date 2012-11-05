@@ -37,6 +37,10 @@ void Joueur::ajouterPoint() {
     this->score++;
 }
 
+int Joueur::getScore() const {
+    return this->score;
+}
+
 Coup* Joueur::obtenirCoup() {
     
     int alea = rand() % 3;

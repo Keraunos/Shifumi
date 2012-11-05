@@ -38,6 +38,7 @@ void Partie::ajouterJoueurs(const int &nbJoueurs) {
     for (int i(0); i < nbJoueurs; i++) ajouterJoueur();
 }
 
+// tour de jeu pour 2 joueurs uniquement
 void Partie::jouerTour() {
     using namespace std;
     
@@ -60,6 +61,17 @@ void Partie::jouerTour() {
         cout << "  " << joueur1->getNom() << " remporte le tour." << endl;
     } else {
         cout << "  => Egalite." << endl;
+    }
+    
+    afficherScore();
+    
+}
+
+void Partie::afficherScore() const {
+    using namespace std;
+    cout << "Scores :" << endl;
+    for(int i(0); i < joueurs.size(); i++) {
+        cout << "  " << joueurs[i]->getNom() << " -> " << joueurs[i]->getScore() << endl;
     }
     
 }
