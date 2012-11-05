@@ -22,6 +22,9 @@ void tests();
  */
 int main(int argc, char** argv) {
     
+    // init random numbers
+    srand(time(0));
+    
     tests();
     
     return 0;
@@ -32,9 +35,6 @@ int main(int argc, char** argv) {
  * Proceder aux tests
  */
 void tests() {
-    
-    // init random numbers
-    srand(time(0));
     
     Feuille f1, f2;
     Pierre p1, p2;
@@ -72,7 +72,7 @@ void tests() {
     Joueur j;
     Coup *c;
     int nbFeuilles(0), nbPierres(0), nbCiseaux(0), nbTours(100);
-    cout << endl << "Test Joueur.obtenirCoup()" << endl;
+    cout << endl << "Test Joueur::obtenirCoup()" << endl;
     for (int i(0); i<nbTours; i++) {
         c = j.obtenirCoup();
         if (c->getNom() == FEUILLE) {
@@ -97,10 +97,17 @@ void tests() {
     cout << "    Joueur = " << c5->getJoueur() << endl;
     
     // test creation d'une partie
-    int nbJoueurs = 3;
-    cout << endl << "Test new Partie() avec " << nbJoueurs << " joueurs :" << endl;
+    int nbJoueurs = 2;
+    cout << endl << "Test new Partie() avec " << nbJoueurs << " joueurs" << endl;
     Partie *part1 = new Partie(nbJoueurs);
     part1->toString();
+    
+    // test tour de jeu
+    cout << endl << "Test Partie::jouerTour()" << endl;
+    part1->jouerTour();
+    part1->jouerTour();
+    part1->jouerTour();
+    part1->jouerTour();
 }
 
 

@@ -5,7 +5,7 @@ using namespace std;
 
 int Joueur::nomId = 0;
 
-Joueur::Joueur() {
+Joueur::Joueur() : score(0) {
     nomId++;
     
     // convertir nomId en std::string
@@ -16,7 +16,7 @@ Joueur::Joueur() {
     nom.append(oss.str());
 }
 
-Joueur::Joueur(const string &_nom) : nom(_nom) {
+Joueur::Joueur(const string &_nom) : nom(_nom), score(0) {
 }
 
 Joueur::Joueur(const Joueur &orig) {
@@ -31,6 +31,10 @@ std::string Joueur::getNom() const {
 
 void Joueur::setNom(const std::string& _nom) {
     this->nom = _nom;
+}
+
+void Joueur::ajouterPoint() {
+    this->score++;
 }
 
 Coup* Joueur::obtenirCoup() {

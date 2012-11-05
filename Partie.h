@@ -14,14 +14,14 @@ public:
     Partie(const int& nbJoueurs);
     virtual ~Partie();
     void toString() const;
-    void jouerTour() const;
+    void jouerTour();
     void afficherScore() const;
     void ajouterJoueur();
     void ajouterJoueur(Joueur *joueur);
     void ajouterJoueurs(const int &nbJoueurs);
 private:
     std::vector<Joueur*> joueurs;
-    
+    int numeroTour;
 };
 
 #endif	/* PARTIE_H */

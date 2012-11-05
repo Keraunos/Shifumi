@@ -18,10 +18,11 @@ public:
     Coup* obtenirCoup();
     std::string getNom() const;
     void setNom(const std::string &nom);
+    void ajouterPoint();
     static int nomId;
 private:
     std::string nom;
-    
+    int score;
 };
 
 #endif	/* JOUEUR_H */
