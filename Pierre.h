@@ -12,7 +12,7 @@ public:
     virtual std::string getNom() const;
     virtual std::string getDominant() const;
 private:
-
+    static int nbPierres;
 };
 
 #endif	/* PIERRE_H */

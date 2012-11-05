@@ -3,14 +3,19 @@
 
 using namespace std;
 
+int Feuille::nbFeuilles = 0;
+
 Feuille::Feuille() : Coup(FEUILLE, CISEAU) {
+    nbFeuilles++;
 }
 
 Feuille::Feuille(const Joueur *joueur) : Coup(FEUILLE, CISEAU) {
+    nbFeuilles++;
     this->setJoueur(joueur);
 }
 
 Feuille::Feuille(const Feuille &orig) {
+    nbFeuilles++;
 }
 
 Feuille::~Feuille() {

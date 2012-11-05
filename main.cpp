@@ -113,7 +113,7 @@ void tests() {
     // test partie avec humains
     cout << endl << "Test partie avec deux humains" << endl;
     Partie *part2 = new Partie(TYPE_HUMAIN);
-    part2->jouerTours(3);
+    part2->jouerTours(1);
     
     
 }
