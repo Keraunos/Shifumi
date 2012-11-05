@@ -24,12 +24,11 @@ int main(int argc, char** argv) {
     
     // init random numbers
     srand(time(0));
-    
     //tests();
     
-    // test joueur avec une IA et un Humain
+    // partie en 15 tours contre une IA
     Partie *p = Partie::getPartieAvecIA();
-    p->jouerTours(20);
+    p->jouerTours(15);
     
     return 0;
 }
@@ -94,7 +93,7 @@ void tests() {
     
     // tests pointeur sur Joueur dans Coup
     cout << endl << "Test Coup.joueur" << endl;
-    IA j5; // IA, Humain ou Joueur
+    Humain j5; // Humain ou Joueur
     Coup *c5 = j5.obtenirCoup();
     cout << "  Les deux adresses memoire doivent etre egales :" << endl;
     cout << "    Joueur = " << &j5 << endl;
@@ -117,7 +116,11 @@ void tests() {
     Partie *part2 = new Partie(TYPE_HUMAIN);
     part2->jouerTours(nbTours_2);
     
-    
+    // test joueur avec une IA et un Humain
+    int nbTours_3(20);
+    cout << endl << "Test partie en " << nbTours_3 << " tours avec 1 Humain et 1 IA" << endl;
+    Partie *part3 = Partie::getPartieAvecIA();
+    part3->jouerTours(nbTours_3);
 }
 
 
