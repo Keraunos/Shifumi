@@ -104,16 +104,15 @@ void tests() {
     part1->toString();
     
     // test tour de jeu
-    cout << endl << "Test Partie::jouerTour()" << endl;
-    part1->jouerTour();
-    part1->jouerTour();
-    part1->jouerTour();
-    part1->jouerTour();
+    int nbTours_1(4);
+    cout << endl << "Test partie en " <<  nbTours_1 << " tours avec 2 Joueurs" << endl;
+    part1->jouerTours(nbTours_1);
     
     // test partie avec humains
-    cout << endl << "Test partie avec deux humains" << endl;
+    int nbTours_2(1);
+    cout << endl << "Test partie en " << nbTours_2 << " tours avec 2 Humains" << endl;
     Partie *part2 = new Partie(TYPE_HUMAIN);
-    part2->jouerTours(1);
+    part2->jouerTours(nbTours_2);
     
     
 }

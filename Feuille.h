@@ -11,6 +11,7 @@ public:
     virtual ~Feuille();
     virtual std::string getNom() const;
     virtual std::string getDominant() const;
+    static int getNbFeuilles();
 private:
     static int nbFeuilles;
 };

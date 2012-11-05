@@ -28,3 +28,7 @@ string Feuille::getNom() const {
 string Feuille::getDominant() const {
     return dominant;
 }
+
+int Feuille::getNbFeuilles() {
+    return nbFeuilles;
+}

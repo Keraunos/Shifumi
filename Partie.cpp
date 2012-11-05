@@ -20,6 +20,7 @@ Partie::Partie(const int& nbJoueurs, const playerType &typeJoueurs) : numeroTour
 Partie::~Partie() {
 }
 
+// affiche la liste des joueurs
 void Partie::toString() const {
     cout << "Liste des joueurs :" << endl ;
     for(int i(0); i < joueurs.size(); i++) {
@@ -78,10 +79,17 @@ void Partie::jouerTour() {
     
     afficherScore();
     
+    // supprimer les coups
+    delete coup0;
+    delete coup1;
 }
 
 void Partie::jouerTours(const int &nbTours) {
     for (int i(0); i < nbTours; i++) jouerTour();
+    // afficher le total de Feuilles, Pierres et Ciseaux
+    cout << "Total Feuilles : " << Feuille::getNbFeuilles() << endl;
+    cout << "Total Pierres : " << Pierre::getNbPierres() << endl;
+    cout << "Total Ciseaux : " << Ciseau::getNbCiseaux() << endl;
 }
 
 void Partie::afficherScore() const {

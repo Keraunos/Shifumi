@@ -11,6 +11,7 @@ public:
     virtual ~Pierre();
     virtual std::string getNom() const;
     virtual std::string getDominant() const;
+    static int getNbPierres();
 private:
     static int nbPierres;
 };

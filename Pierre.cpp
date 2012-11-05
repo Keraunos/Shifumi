@@ -28,3 +28,7 @@ string Pierre::getNom() const{
 string Pierre::getDominant() const {
     return dominant;
 }
+
+int Pierre::getNbPierres() {
+    return nbPierres;
+}

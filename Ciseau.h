@@ -11,6 +11,7 @@ public:
     virtual ~Ciseau();
     virtual std::string getNom() const;
     virtual std::string getDominant() const;
+    static int getNbCiseaux();
 private:
     static int nbCiseaux;
 

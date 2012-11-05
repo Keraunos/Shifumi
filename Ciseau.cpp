@@ -28,3 +28,7 @@ string Ciseau::getNom() const {
 string Ciseau::getDominant() const {
     return dominant;
 }
+
+int Ciseau::getNbCiseaux() {
+    return nbCiseaux;
+}
