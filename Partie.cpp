@@ -1,5 +1,7 @@
 #include "Partie.h"
 
+using namespace std;
+
 Partie::Partie() : numeroTour(0) {
     ajouterJoueurs(2);
 }
@@ -19,7 +21,6 @@ Partie::~Partie() {
 }
 
 void Partie::toString() const {
-    using namespace std;
     cout << "Liste des joueurs :" << endl ;
     for(int i(0); i < joueurs.size(); i++) {
         cout << "  " << joueurs[i]->getNom() << endl;
@@ -40,7 +41,6 @@ void Partie::ajouterJoueurs(const int &nbJoueurs) {
 
 // tour de jeu pour 2 joueurs uniquement
 void Partie::jouerTour() {
-    using namespace std;
     
     numeroTour++;
     cout << " Tour no " << numeroTour << " :" << endl;
@@ -68,7 +68,7 @@ void Partie::jouerTour() {
 }
 
 void Partie::afficherScore() const {
-    using namespace std;
+    
     cout << "Scores :" << endl;
     for(int i(0); i < joueurs.size(); i++) {
         cout << "  " << joueurs[i]->getNom() << " -> " << joueurs[i]->getScore() << endl;
