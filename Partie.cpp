@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Partie::Partie() {
+Partie::Partie() : numeroTour(0) {
 }
 
 Partie* Partie::getPartieAvecIA() {
