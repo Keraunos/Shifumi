@@ -25,7 +25,12 @@ int main(int argc, char** argv) {
     // init random numbers
     srand(time(0));
     
-    tests();
+    //tests();
+    
+    Humain *h1 = new Humain(), *h2 = new Humain();
+    
+    h1->obtenirCoup();
+    h2->obtenirCoup();
     
     return 0;
 }

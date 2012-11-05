@@ -3,11 +3,14 @@
 
 #include "Joueur.h"
 
+class unexpectedUserChoiceException {};
+
 class Humain : public Joueur {
 public:
     Humain();
     Humain(const Humain &orig);
     virtual ~Humain();
+    Coup* obtenirCoup() const;
 private:
 
 };

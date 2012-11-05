@@ -41,7 +41,7 @@ int Joueur::getScore() const {
     return this->score;
 }
 
-Coup* Joueur::obtenirCoup() {
+Coup* Joueur::obtenirCoup() const {
     
     int alea = rand() % 3;
     

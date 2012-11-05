@@ -15,7 +15,7 @@ public:
     Joueur(const std::string &_nom);
     Joueur(const Joueur &orig);
     virtual ~Joueur();
-    Coup* obtenirCoup();
+    Coup* obtenirCoup() const;
     std::string getNom() const;
     void setNom(const std::string &nom);
     void ajouterPoint();
